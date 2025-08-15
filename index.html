@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IISc Kho-Kho Club</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">IISc Kho-Kho Club</a>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-label="Open menu">☰</button>
+      <nav id="navMenu" class="nav-menu" aria-hidden="true">
+        <button id="navClose" class="nav-close" aria-label="Close menu">✕</button>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#sessions" class="nav-link">Sessions</a>
+        <a href="#rules" class="nav-link">Rules</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero page-section">
+      <!-- full-bleed slideshow background -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="slide-show" id="homeSlides">
+          <div class="slide" style="background:linear-gradient(135deg,#1e3a8a,#0ea5e9);"> <div class="slide-caption">Inter-IISc Friendly - 2024</div></div>
+          <div class="slide" style="background:linear-gradient(135deg,#065f46,#10b981);"> <div class="slide-caption">Practice Session — Evening</div></div>
+          <div class="slide" style="background:linear-gradient(135deg,#7c3aed,#f97316);"> <div class="slide-caption">Championship Squad</div></div>
+        </div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>IISc Kho-Kho Club</h1>
+          <p>Welcome to the official Kho-Kho club of the Indian Institute of Science — play, train, and compete.</p>
+          <div class="cta">
+            <a class="btn primary" href="#gallery">View Gallery</a>
+            <a class="btn ghost" href="#sessions">Join a Session</a>
+          </div>
+
+          <div class="conveners">
+             <h3>Conveners</h3>
+             <div class="convener-grid">
+               <div class="convener-card">
+                 <div class="avatar" id="avatar-shaukat" aria-hidden="true"></div>
+                 <div class="convener-meta">
+                   <div class="convener-name">Shaukat Aziz</div>
+                   <div class="convener-role">Kho-Kho Convener</div>
+                   <a href="mailto:shaukataziz@iisc.ac.in" class="convener-email">shaukataziz@iisc.ac.in</a>
+                 </div>
+               </div>
+               <div class="convener-card">
+                 <div class="avatar" id="avatar-sakshi" aria-hidden="true"></div>
+                 <div class="convener-meta">
+                   <div class="convener-name">Sakshi Soni</div>
+                   <div class="convener-role">Women's Kho-Kho Convenor</div>
+                   <a href="mailto:sakshisoni@iisc.ac.in" class="convener-email">sakshisoni@iisc.ac.in</a>
+                 </div>
+               </div>
+             </div>
+            <div class="home-socials">
+            </div>
+            <!-- Socials moved below nav/tab list -->
+          </div>
+        </div>
+      </div>
+
+      <div class="home-bg"></div>
+        <div class="home-socials-fixed">
+          <a href="https://www.youtube.com/channel/yourchannel" class="social-link" target="_blank" title="YouTube">
+            <span class="icon"> <!-- YouTube SVG -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.112C19.413 3.5 12 3.5 12 3.5s-7.413 0-9.386.574A2.994 2.994 0 0 0 .502 6.186C0 8.16 0 12 0 12s0 3.84.502 5.814a2.994 2.994 0 0 0 2.112 2.112C4.587 20.5 12 20.5 12 20.5s7.413 0 9.386-.574a2.994 2.994 0 0 0 2.112-2.112C24 15.84 24 12 24 12s0-3.84-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </span>
+          </a>
+          <a href="https://www.instagram.com/yourprofile" class="social-link" target="_blank" title="Instagram">
+            <span class="icon"> <!-- Instagram SVG -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.058-1.366.334-2.633 1.308-3.608.974-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.775.13 4.602.402 3.635 1.37c-.967.967-1.24 2.14-1.298 3.417C2.013 5.668 2 6.077 2 9.335v5.33c0 3.258.013 3.667.072 4.947.058 1.277.331 2.45 1.298 3.417.967.967 2.14 1.24 3.417 1.298 1.28.059 1.689.072 4.947.072s3.667-.013 4.947-.072c1.277-.058 2.45-.331 3.417-1.298.967-.967 1.24-2.14 1.298-3.417.059-1.28.072-1.689.072-4.947v-5.33c0-3.258-.013-3.667-.072-4.947-.058-1.277-.331-2.45-1.298-3.417-.967-.967-2.14-1.24-3.417-1.298C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sessions" class="section page-section">
+      <div class="container">
+        <h2 class="section-title">Sessions</h2>
+        <p class="section-lead">Weekly open sessions — everyone welcome.</p>
+        <div class="grid programs-grid">
+          <article class="card">
+            <h3>Regular Practice Slot</h3>
+            <p>Every Wednesday, Friday and Sunday — 5:30 PM @ TMC / KV ground.</p>
+          </article>
+        </div>
+       </div>
+     </section>
+
+    <section id="rules" class="section alt page-section">
+      <div class="container">
+        <h2 class="section-title">Rules</h2>
+        <p class="section-lead">Summary of the club's Kho-Kho rules (detailed PDF available below).</p>
+
+        <div class="rules-summary">
+          <p><strong>Match format</strong>: Two teams (typically 12 in squad; 9 field players) play two innings each. Matches are time-based with chasing/defending turns.</p>
+          <p><strong>Field & players</strong>: Standard Kho-Kho rectangular court with marked poles. Players rotate positions; substitutes allowed as per event rules.</p>
+          <p><strong>Scoring & dismissals</strong>: Chasers score by touching/tagging defenders according to the rulebook; defenders are dismissed when tagged or when violating lane/position rules. Points are awarded per dismissal and for team performance during the innings.</p>
+          <p><strong>Fouls & conduct</strong>: Illegal contact, unsportsmanlike behavior, deliberate obstruction, or unsafe play result in penalties. Respect, safety, and fair play are mandatory.</p>
+          <p><strong>Session rules</strong>: Club sessions follow a simplified, practice-friendly variant of tournament rules; referees/coaches will clarify interpretations during events.</p>
+        </div>
+
+        <div class="rules-lead-row">
+          <p class="section-lead">Download the full rules document for complete, authoritative regulations.</p>
+          <a class="btn pdf" href="files/Kho-Kho rules.pdf" target="_blank" rel="noopener" download><span class="pdf-icon" aria-hidden="true" style="vertical-align:middle;margin-right:4px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="12" height="12" rx="2" fill="#fff" fill-opacity="0.2"/><path d="M5 5h6v6H5V5zm1 1v4h4V6H6z" fill="#fb923c"/></svg></span>Pdf</a>
+        </div>
+              <div class="home-socials-fixed">
+                <a href="https://www.youtube.com/channel/yourchannel" class="social-link" target="_blank" title="YouTube">
+                  <span class="icon"> <!-- YouTube SVG -->
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.112-2.112C19.413 3.5 12 3.5 12 3.5s-7.413 0-9.386.574A2.994 2.994 0 0 0 .502 6.186C0 8.16 0 12 0 12s0 3.84.502 5.814a2.994 2.994 0 0 0 2.112 2.112C4.587 20.5 12 20.5 12 20.5s7.413 0 9.386-.574a2.994 2.994 0 0 0 2.112-2.112C24 15.84 24 12 24 12s0-3.84-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  </span>
+                </a>
+                <a href="https://www.instagram.com/yourprofile" class="social-link" target="_blank" title="Instagram">
+                  <span class="icon"> <!-- Instagram SVG -->
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.974 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.058-1.366.334-2.633 1.308-3.608.974-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.775.13 4.602.402 3.635 1.37c-.967.967-1.24 2.14-1.298 3.417C2.013 5.668 2 6.077 2 9.335v5.33c0 3.258.013 3.667.072 4.947.058 1.277.331 2.45 1.298 3.417.967.967 2.14 1.24 3.417 1.298 1.28.059 1.689.072 4.947.072s3.667-.013 4.947-.072c1.277-.058 2.45-.331 3.417-1.298.967-.967 1.24-2.14 1.298-3.417.059-1.28.072-1.689.072-4.947v-5.33c0-3.258-.013-3.667-.072-4.947-.058-1.277-.331-2.45-1.298-3.417-.967-.967-2.14-1.24-3.417-1.298C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+                  </span>
+                </a>
+              </div>
+       </div>
+     </section>
+
+    <section id="gallery" class="section page-section">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <p class="section-lead">Photos from practice sessions and tournaments.</p>
+
+        <div class="gallery-sections">
+          <div class="gallery-men">
+            <h3>Men</h3>
+            <div class="gallery-grid">
+              <figure class="photo" data-filename="IISM23"><div class="photo-inner" style="background:linear-gradient(135deg,#ff7eb3,#ff758c);"><figcaption>IISM23</figcaption></div></figure>
+              <figure class="photo" data-filename="IISM24"><div class="photo-inner" style="background:linear-gradient(135deg,#89f7fe,#66a6ff);"><figcaption>IISM24</figcaption></div></figure>
+              <figure class="photo" data-filename="Aavhan25"><div class="photo-inner" style="background:linear-gradient(135deg,#c471f5,#fa71cd);"><figcaption>Aavhan25</figcaption></div></figure>
+            </div>
+          </div>
+
+          <div class="gallery-women">
+            <h3>Women</h3>
+            <div class="gallery-grid">
+              <figure class="photo empty"><div class="photo-inner"><figcaption>Placeholder</figcaption></div></figure>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="section alt page-section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-lead">For queries or event coordination, contact the conveners.</p>
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <input name="name" type="text" placeholder="Your name" required>
+            <input name="email" type="email" placeholder="Email" required>
+          </div>
+          <textarea name="message" placeholder="Your message" rows="4" required></textarea>
+          <div class="form-row">
+            <button class="btn primary" type="submit">Send Message</button>
+            <div id="formMsg" class="form-msg" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2025 IISc Kho-Kho Club — All rights reserved.</p>
+      <div class="socials">
+        <a href="#">IISc Gymkhana</a>
+        <a href="https://www.instagram.com/iisc_khokho_club/" target="_blank" rel="noopener" class="social-link"><span class="icon" aria-hidden="true" style="vertical-align:middle;margin-right:4px;"><svg width="18" height="18" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="448" height="448" rx="96" fill="#fff" fill-opacity="0.12"/><path d="M224 144c-44.2 0-80 35.8-80 80s35.8 80 80 80 80-35.8 80-80-35.8-80-80-80zm0 128c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm88-132c0 10.7-8.7 19.4-19.4 19.4-10.7 0-19.4-8.7-19.4-19.4 0-10.7 8.7-19.4 19.4-19.4 10.7 0 19.4 8.7 19.4 19.4zm49.6 19.4c-1-20.9-5.9-39.4-21.6-55.1C325.4 99.9 306.9 95 286 94c-20.9-1-83.6-1-104.5 0-20.9 1-39.4 5.9-55.1 21.6C99.9 122.6 95 141.1 94 162c-1 20.9-1 83.6 0 104.5 1 20.9 5.9 39.4 21.6 55.1 15.7 15.7 34.2 20.6 55.1 21.6 20.9 1 83.6 1 104.5 0 20.9-1 39.4-5.9 55.1-21.6 15.7-15.7 20.6-34.2 21.6-55.1 1-20.9 1-83.6 0-104.5zm-36.2 128.2c-7.8 19.6-22.9 34.7-42.5 42.5-29.5 11.7-99.5 9-128.2 0-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.5-9-99.5 0-128.2 7.8-19.6 22.9-34.7 42.5-42.5 29.5-11.7 99.5-9 128.2 0 19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.5 9 99.5 0 128.2z" fill="#fb923c"/></svg></span>Instagram</a>
+        <a href="https://www.youtube.com/@IIScKhoKho" target="_blank" rel="noopener" class="social-link"><span class="icon" aria-hidden="true" style="vertical-align:middle;margin-right:4px;"><svg width="18" height="18" viewBox="0 0 576 512" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="576" height="512" rx="96" fill="#fff" fill-opacity="0.12"/><path d="M549.7 124.1c-6.3-23.7-24.9-42.3-48.6-48.6C465.1 64 288 64 288 64s-177.1 0-213.1 11.5c-23.7 6.3-42.3 24.9-48.6 48.6C16 160.1 16 256 16 256s0 95.9 10.3 131.9c6.3 23.7 24.9 42.3 48.6 48.6C110.9 448 288 448 288 448s177.1 0 213.1-11.5c23.7-6.3 42.3-24.9 48.6-48.6C560 351.9 560 256 560 256s0-95.9-10.3-131.9zM232 336V176l144 80-144 80z" fill="#fb923c"/></svg></span>YouTube</a>
+       </div>
+    </div>
+  </footer>
+
+  <script src="static/script.js"></script>
+</body>
+</html>
