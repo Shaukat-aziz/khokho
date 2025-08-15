@@ -1,0 +1,264 @@
+:root{
+  --bg:#0f1724;--muted:#94a3b8;--accent:#fb923c;--card:#0b1220;--glass:rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#071124 0%, #0f1724 100%);color:#e6eef8}
+.container{max-width:none;width:100%;margin:0 auto;padding:0}
+
+/* Remove inner horizontal padding so content is flush with viewport edges */
+.nav-inner{padding:0}
+.section .container > *{padding:0}
+.footer-inner{padding:0}
+
+.nav{backdrop-filter: blur(6px);position:sticky;top:0;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-bottom:1px solid rgba(255,255,255,0.03);z-index:12}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 28px;min-height:84px}
+.brand{font-weight:800;color:var(--accent);text-decoration:none;font-size:20px}
+.brand{font-size:22px}
+.nav-menu{display:flex;gap:20px;align-items:center}
+.nav-menu a{color:var(--muted);text-decoration:none}
+.nav-menu .nav-close{display:none}
+.nav-toggle{display:none;background:none;border:0;color:var(--muted);font-size:22px}
+.hero{padding:64px 0}
+.hero-inner{display:flex;gap:40px;align-items:center}
+.hero-text{flex:1}
+.hero h1{font-size:42px;margin:0 0 12px}
+.hero p{color:var(--muted);margin:0 0 20px}
+.cta{display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit;text-decoration:none}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#f97316);border:0;color:#071124}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.hero-image{width:360px;height:260px;border-radius:12px;background:linear-gradient(135deg,#0ea5e9, #7c3aed);box-shadow:0 10px 30px rgba(12,23,40,0.6)}
+.section{padding:64px 0}
+.section.alt{background:rgba(255,255,255,0.02)}
+.section-title{font-size:26px;margin:0 0 8px}
+.section-lead{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;gap:18px}
+.programs-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);padding:18px;border-radius:10px}
+.schedule table{width:100%;border-collapse:collapse}
+.schedule td,.schedule th{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.pricing-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.price-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:10px;text-align:center}
+.price{font-size:28px;margin:10px 0}
+.price span{font-size:14px;color:var(--muted)}
+.price-card.featured{box-shadow:0 20px 40px rgba(0,0,0,0.6);transform:translateY(-6px)}
+.contact-form{max-width:700px}
+.form-row{display:flex;gap:12px}
+.contact-form input,.contact-form textarea{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.02);color:inherit}
+.form-msg{margin-left:12px;color:var(--muted)}
+.footer{border-top:1px solid rgba(255,255,255,0.03);padding:20px 0;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+/* Conveners */
+.conveners{margin-top:18px;background:rgba(255,255,255,0.02);padding:12px;border-radius:8px}
+.conveners ul{margin:8px 0 0;padding-left:16px;color:var(--muted)}
+.convener-grid{display:flex;gap:18px;margin-top:12px}
+.convener-card{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.02);padding:10px;border-radius:10px}
+.avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1f2937,#334155);border:2px dashed rgba(255,255,255,0.06)}
+.convener-meta{display:flex;flex-direction:column}
+.convener-name{font-weight:700}
+.convener-role{color:var(--muted);font-size:13px}
+.convener-email{color:var(--muted);font-size:13px;text-decoration:none}
+
+/* Gallery slideshow */
+.gallery{position:relative;display:flex;align-items:center;gap:12px}
+.gslides{overflow:hidden;flex:1;border-radius:10px}
+.gslide{min-height:260px;background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:flex-start;padding:18px;border-radius:10px}
+.gcaption{background:rgba(0,0,0,0.35);padding:8px 12px;border-radius:6px;color:#fff}
+.gprev,.gnext{background:rgba(255,255,255,0.04);border:0;color:var(--muted);padding:12px;border-radius:8px}
+
+/* Home slideshow */
+.slide-show{position:relative;overflow:hidden;border-radius:10px}
+.slide{min-height:220px;display:flex;align-items:flex-end;padding:16px;border-radius:10px}
+.slide-caption{background:rgba(0,0,0,0.35);padding:8px 10px;border-radius:6px;color:#fff}
+
+/* Full-page sections */
+html,body{scroll-behavior:smooth}
+.page-section{min-height:calc(100vh - 84px);padding-top:40px;padding-bottom:40px; /* default desktop offset */scroll-margin-top:96px;}
+/* Make only the home section fullscreen; other sections use normal flow */
+.page-section:not(#home){
+  min-height: auto;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* Ensure section headings are visible below the fixed header when using anchor links */
+.page-section{
+  /* default desktop offset */
+  scroll-margin-top: 96px;
+}
+
+/* Make non-home sections display their background as full-bleed layer behind content (like Home) */
+.page-section{position:relative;overflow:hidden}
+.page-section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-repeat:no-repeat;background-size:cover;background-position:center center;opacity:1}
+
+/* Use the section's explicit background (set earlier) for the pseudo layer */
+#sessions::before{background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.45));}
+#rules::before{background:linear-gradient(180deg, rgba(3,7,18,0.55), rgba(6,10,28,0.35));}
+#gallery::before{background:linear-gradient(180deg, rgba(6,10,20,0.5), rgba(12,18,30,0.2));}
+#contact::before{background:linear-gradient(180deg, rgba(2,6,23,0.55), rgba(2,6,23,0.3));}
+
+/* Ensure content sits above the background layer */
+.page-section .container{position:relative;z-index:2}
+
+/* Hide any gallery controls (still static background) */
+.gprev, .gnext{display:none}
+
+/* Add readable horizontal padding to all sections except Home */
+.page-section:not(#home) .container > *{
+  padding-left:64px;
+  padding-right:64px;
+}
+
+.rules-lead-row{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.btn.pdf{padding:6px 10px;border-radius:6px;font-size:13px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);display:inline-flex;align-items:center;gap:4px;}
+.pdf-icon{display:inline-block;vertical-align:middle;}
+
+@media (max-width:900px){
+  .page-section:not(#home) .container > *{
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
+
+@media (max-width:900px){
+  .nav-menu{position:fixed;top:0;right:0;bottom:0;width:260px;flex-direction:column;padding:24px;background:linear-gradient(180deg,rgba(2,6,23,0.98),rgba(2,6,23,0.95));transform:translateX(110%);transition:transform .28s ease;box-shadow: -10px 0 30px rgba(2,6,23,0.6)}
+  .nav-menu.open{transform:translateX(0);} 
+  .nav-menu .nav-close{display:block;background:none;border:0;color:var(--muted);font-size:20px;align-self:flex-end}
+  .nav-menu .nav-link{color:#e6eef8;padding:12px 0;text-decoration:none;font-weight:600}
+  .page-section{ /* smaller header on mobile */
+    scroll-margin-top:76px;
+  }
+}
+
+/* Active link */
+.nav-link.active{color:var(--accent)}
+
+/* small tweaks */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column}
+  .nav-menu{display:none;flex-direction:column;gap:12px;background:var(--glass);position:absolute;right:32px;top:64px;padding:12px;border-radius:8px}
+  .nav-toggle{display:block}
+  .gslides .gslide{min-height:160px}
+  .hero-image{width:100%;height:180px}
+}
+
+/* Full-screen home slideshow tweaks (improved) */
+#home.hero{min-height:100vh;padding-top:0;padding-bottom:0;position:relative}
+#home .container{height:100vh;display:flex;align-items:stretch;padding:0;position:relative}
+.hero-inner{display:flex;flex:1;align-items:stretch;gap:40px;position:relative}
+
+/* Make slides fill viewport and stack absolutely */
+.hero-image{flex:1;min-width:0;position:relative;height:100vh;border-radius:0;overflow:hidden}
+.slide-show{position:absolute;inset:0;height:100%;width:100%}
+.slide{position:absolute;inset:0;display:flex;align-items:center;padding:32px;background-size:cover;background-position:center center;transition:opacity .6s ease;opacity:0}
+.slide.active{opacity:1}
+
+/* Overlay for text to remain readable */
+.hero-text{flex:0 0 46%;padding:48px;display:flex;flex-direction:column;justify-content:center;z-index:5;position:relative}
+.hero-text::before{content:"";position:absolute;inset:0;left:-20%;right:-20%;background:linear-gradient(90deg,rgba(2,6,23,0.65),transparent);z-index:1;border-radius:0}
+.hero-text *{position:relative;z-index:6}
+
+/* ensure nav overlays the slideshow */
+.nav{position:fixed;top:0;left:0;right:0;z-index:10}
+
+/* adjust for mobile: hero becomes stacked and slides shrink */
+@media (max-width:900px){
+  #home .container{height:auto;padding:24px}
+  .hero-inner{flex-direction:column}
+  .hero-text{flex:unset;padding:18px;background:linear-gradient(180deg,rgba(2,6,23,0.4),transparent)}
+  .hero-image{height:260px}
+  .slide{position:relative;height:260px}
+  .slide-show{position:relative}
+  .hero-text::before{display:none}
+}
+
+/* Full-bleed hero background to span entire viewport width */
+.hero-bg{position:fixed;left:0;right:0;top:0;height:100vh;z-index:0;overflow:hidden}
+.hero-bg .slide-show{position:relative;height:100%;width:100%}
+.hero-bg .slide{position:absolute;inset:0;background-size:cover;background-position:center center;opacity:0;transition:opacity .6s ease}
+.hero-bg .slide.active{opacity:1}
+
+/* place slide caption at extreme right, vertically centered */
+.slide-caption{
+  position:absolute;
+  right:40px;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.45);
+  padding:12px 16px;
+  border-radius:8px;
+  color:#fff;
+  max-width:360px;
+  text-align:right;
+  box-shadow:0 8px 24px rgba(2,6,23,0.6);
+}
+
+@media (max-width:900px){
+  /* on mobile, place caption at bottom-left and full width */
+  .slide-caption{position:relative;right:auto;top:auto;transform:none;margin:12px;padding:10px;text-align:left;max-width:none;background:rgba(0,0,0,0.5);}
+}
+
+/* Static backgrounds for non-home sections */
+#sessions{background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.45));}
+#rules{background:linear-gradient(180deg, rgba(3,7,18,0.55), rgba(6,10,28,0.35));}
+#gallery{background:linear-gradient(180deg, rgba(6,10,20,0.5), rgba(12,18,30,0.2));}
+#contact{background:linear-gradient(180deg, rgba(2,6,23,0.55), rgba(2,6,23,0.3));}
+
+/* Gallery: show only the first slide as static background and hide controls */
+.gslides{position:relative}
+.gslides .gslide{display:none}
+.gslides .gslide:first-child{display:block}
+
+/* Gallery grids */
+.gallery-sections{display:flex;gap:28px;flex-direction:column}
+.gallery-men,.gallery-women{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.photo{background:#0b1220;border-radius:8px;overflow:hidden}
+.photo-inner{height:180px;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px}
+.photo.empty .photo-inner{display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.photo figcaption{color:#fff;background:rgba(0,0,0,0.3);padding:6px 10px;border-radius:6px}
+
+/* small pdf button */
+.btn.pdf{padding:6px 10px;border-radius:6px;font-size:13px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);display:inline-flex;align-items:center;gap:4px;}
+.pdf-icon{display:inline-block;vertical-align:middle;}
+
+.footer .socials{display:flex;gap:14px;align-items:center}
+.footer .socials a{color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.footer .icon{width:18px;height:18px;display:inline-block;}
+
+.home-socials{margin-top:18px;display:flex;gap:18px;align-items:center}
+.home-socials .icon{width:22px;height:22px;display:inline-block;}
+.home-socials .social-link{color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:4px;font-size:15px;}
+
+/* Fixed social button group in the top right of the Home section */
+.home-socials-fixed {
+  position: absolute;
+  top: 72px; /* Move below nav/tab list area, adjust as needed */
+  right: 32px;
+  z-index: 10;
+  display: flex;
+  gap: 18px;
+}
+.home-socials-fixed .icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+}
+.home-socials-fixed .social-link {
+  color: var(--muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  padding: 7px;
+  transition: background 0.2s;
+}
+.home-socials-fixed .social-link:hover {
+  background: rgba(255,255,255,0.18);
+  color: var(--accent);
+}
+.home-bg { position: relative; }
