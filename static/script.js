@@ -48,12 +48,27 @@ onScroll();
 })();
 
 // Gallery image modal
-// In-place zoom for gallery images
-// Modal for gallery images: show on long press, close on release
 const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImg');
 const modalCaption = document.getElementById('modalCaption');
-let pressTimer = null;
+let closeBtn = document.getElementById('modalClose');
+
+// If close button doesn't exist, create and insert it
+if (!closeBtn && modal) {
+  closeBtn = document.createElement('button');
+  closeBtn.id = 'modalClose';
+  closeBtn.textContent = '×';
+  closeBtn.style.position = 'absolute';
+  closeBtn.style.top = '24px';
+  closeBtn.style.right = '32px';
+  closeBtn.style.fontSize = '2rem';
+  closeBtn.style.color = '#fff';
+  closeBtn.style.background = 'transparent';
+  closeBtn.style.border = 'none';
+  closeBtn.style.cursor = 'pointer';
+  closeBtn.style.zIndex = '1001';
+  modal.appendChild(closeBtn);
+}
 
 function showModal(src, caption) {
   modalImg.src = src;
@@ -67,36 +82,16 @@ function hideModal() {
 }
 
 document.querySelectorAll('.photo-inner[data-img]').forEach(function(el){
-  // Mouse events
-  el.addEventListener('mousedown', function(e){
-    e.preventDefault();
-    pressTimer = setTimeout(function(){
-      showModal(el.getAttribute('data-img'), el.getAttribute('data-caption'));
-    }, 400); // 400ms long press
-  });
-  el.addEventListener('mouseup', function(e){
-    clearTimeout(pressTimer);
-    hideModal();
-  });
-  el.addEventListener('mouseleave', function(e){
-    clearTimeout(pressTimer);
-    hideModal();
-  });
-  // Touch events
-  el.addEventListener('touchstart', function(e){
-    pressTimer = setTimeout(function(){
-      showModal(el.getAttribute('data-img'), el.getAttribute('data-caption'));
-    }, 400);
-  });
-  el.addEventListener('touchend', function(e){
-    clearTimeout(pressTimer);
-    hideModal();
-  });
-  el.addEventListener('touchcancel', function(e){
-    clearTimeout(pressTimer);
-    hideModal();
+  el.addEventListener('click', function(e) {
+    const src = el.getAttribute('data-img');
+    const caption = el.getAttribute('data-caption');
+    showModal(src, caption);
   });
 });
+
+if (closeBtn) {
+  closeBtn.addEventListener('click', hideModal);
+}
 
 // Simple contact form handler (sends to local Flask endpoint if available)
 const form = document.getElementById('contactForm');
