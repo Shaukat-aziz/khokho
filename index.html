@@ -31,6 +31,12 @@
           <div class="slide" style="background:linear-gradient(135deg,#1e3a8a,#0ea5e9);"> <div class="slide-caption">Inter-IISc Friendly - 2024</div></div>
           <div class="slide" style="background:linear-gradient(135deg,#065f46,#10b981);"> <div class="slide-caption">Practice Session — Evening</div></div>
           <div class="slide" style="background:linear-gradient(135deg,#7c3aed,#f97316);"> <div class="slide-caption">Championship Squad</div></div>
+            <div class="slide" style="background-image:url('files/IISM24squad.png');background-size:cover;background-position:center;">
+              <div class="slide-caption">IISM24 Squad</div>
+            </div>
+          <div class="slide" style="background-image:url('files/IISM23F.png');background-size:cover;background-position:center;">
+            <div class="slide-caption">IISM23 Facilitation</div>
+          </div>
         </div>
       </div>
 
@@ -140,9 +146,21 @@
           <div class="gallery-men">
             <h3>Men</h3>
             <div class="gallery-grid">
-              <figure class="photo" data-filename="IISM23"><div class="photo-inner" style="background:linear-gradient(135deg,#ff7eb3,#ff758c);"><figcaption>IISM23</figcaption></div></figure>
-              <figure class="photo" data-filename="IISM24"><div class="photo-inner" style="background:linear-gradient(135deg,#89f7fe,#66a6ff);"><figcaption>IISM24</figcaption></div></figure>
-              <figure class="photo" data-filename="Aavhan25"><div class="photo-inner" style="background:linear-gradient(135deg,#c471f5,#fa71cd);"><figcaption>Aavhan25</figcaption></div></figure>
+              <figure class="photo" data-filename="IISM23">
+                <div class="photo-inner" style="background-image:url('files/IISM23.png');background-size:cover;background-position:center;cursor:pointer;" data-img="files/IISM23.png" data-caption="IISM23">
+                  <figcaption>IISM23</figcaption>
+                </div>
+              </figure>
+              <figure class="photo" data-filename="IISM24">
+                <div class="photo-inner" style="background:linear-gradient(135deg,#89f7fe,#66a6ff);cursor:pointer;" data-img="files/IISM24squad.png" data-caption="IISM24 Squad">
+                  <figcaption>IISM24</figcaption>
+                </div>
+              </figure>
+              <figure class="photo" data-filename="Aavhan25">
+                <div class="photo-inner" style="background:linear-gradient(135deg,#c471f5,#fa71cd);cursor:pointer;" data-img="files/Aavhan25.png" data-caption="Aavhan25">
+                  <figcaption>Aavhan25</figcaption>
+                </div>
+              </figure>
             </div>
           </div>
 
@@ -187,6 +205,11 @@
     </div>
   </footer>
 
+  <!-- Modal for expanded image (long press only, closes on release) -->
+  <div id="imageModal" class="modal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;">
+    <img id="modalImg" src="" alt="Expanded" style="max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 0 40px #000;">
+    <div id="modalCaption" style="color:#fff;text-align:center;margin-top:16px;font-size:1.3rem;"></div>
+  </div>
   <script src="static/script.js"></script>
 </body>
 </html>

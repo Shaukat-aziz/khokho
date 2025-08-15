@@ -47,6 +47,57 @@ onScroll();
   }, 3500);
 })();
 
+// Gallery image modal
+// In-place zoom for gallery images
+// Modal for gallery images: show on long press, close on release
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImg');
+const modalCaption = document.getElementById('modalCaption');
+let pressTimer = null;
+
+function showModal(src, caption) {
+  modalImg.src = src;
+  modalCaption.textContent = caption || '';
+  modal.style.display = 'flex';
+}
+function hideModal() {
+  modal.style.display = 'none';
+  modalImg.src = '';
+  modalCaption.textContent = '';
+}
+
+document.querySelectorAll('.photo-inner[data-img]').forEach(function(el){
+  // Mouse events
+  el.addEventListener('mousedown', function(e){
+    e.preventDefault();
+    pressTimer = setTimeout(function(){
+      showModal(el.getAttribute('data-img'), el.getAttribute('data-caption'));
+    }, 400); // 400ms long press
+  });
+  el.addEventListener('mouseup', function(e){
+    clearTimeout(pressTimer);
+    hideModal();
+  });
+  el.addEventListener('mouseleave', function(e){
+    clearTimeout(pressTimer);
+    hideModal();
+  });
+  // Touch events
+  el.addEventListener('touchstart', function(e){
+    pressTimer = setTimeout(function(){
+      showModal(el.getAttribute('data-img'), el.getAttribute('data-caption'));
+    }, 400);
+  });
+  el.addEventListener('touchend', function(e){
+    clearTimeout(pressTimer);
+    hideModal();
+  });
+  el.addEventListener('touchcancel', function(e){
+    clearTimeout(pressTimer);
+    hideModal();
+  });
+});
+
 // Simple contact form handler (sends to local Flask endpoint if available)
 const form = document.getElementById('contactForm');
 const formMsg = document.getElementById('formMsg');
