@@ -14,6 +14,81 @@
 *{box-sizing:border-box}
 body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#071124 0%, #0f1724 100%);color:#e6eef8}
 .container{max-width:none;width:100%;margin:0 auto;padding:0}
+@media (max-width:600px) {
+  body {
+    font-size:15px;
+  }
+  .container {
+    padding:0 6px;
+  }
+  .section {
+    padding:28px 0;
+  }
+  .section-title {
+    font-size:1.2rem;
+    margin-bottom:6px;
+  }
+  .section-lead {
+    font-size:1rem;
+    margin-bottom:14px;
+  }
+  .btn, .btn.primary, .btn.ghost {
+    padding:8px 12px;
+    font-size:0.98rem;
+    border-radius:7px;
+  }
+  .footer-inner {
+    flex-direction:column;
+    gap:8px;
+    font-size:0.95rem;
+    padding:0 6px;
+  }
+  .gallery-men, .gallery-women {
+    padding:6px;
+  }
+  .gallery-grid {
+    gap:7px;
+  }
+  .photo-inner {
+    height:90px;
+    padding:5px;
+    font-size:0.9rem;
+  }
+  .gallery-video {
+    margin-top:1.2rem;
+  }
+  .gallery-video h3 {
+    font-size:1rem;
+    margin-bottom:0.3rem;
+  }
+  .gallery-video div {
+    font-size:0.93rem;
+    margin-top:0.2rem;
+  }
+  .modal img {
+    max-width:98vw;
+    max-height:50vh;
+    border-radius:7px;
+  }
+  .modal #modalCaption {
+    font-size:0.95rem;
+    margin-top:7px;
+    padding:0 5px;
+  }
+  #modalClose {
+    top:8px !important;
+    right:8px !important;
+    font-size:1.2rem !important;
+    padding:2px 8px !important;
+  }
+  .nav-inner {
+    min-height:54px;
+    padding:0 8px;
+  }
+  .brand {
+    font-size:1.1rem;
+  }
+}
 
 /* Remove inner horizontal padding so content is flush with viewport edges */
 .nav-inner{padding:0}
@@ -62,7 +137,7 @@ body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:linear-gra
 /* Conveners */
 .conveners{margin-top:18px;background:rgba(255,255,255,0.02);padding:12px;border-radius:8px}
 .conveners ul{margin:8px 0 0;padding-left:16px;color:var(--muted)}
-.convener-grid{display:flex;gap:18px;margin-top:12px}
+.convener-grid{display:flex;flex-direction:column;gap:18px;margin-top:12px}
 .convener-card{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.02);padding:10px;border-radius:10px}
 .avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1f2937,#334155);border:2px dashed rgba(255,255,255,0.06)}
 .convener-meta{display:flex;flex-direction:column}
@@ -155,7 +230,19 @@ html,body{scroll-behavior:smooth}
 
 /* Full-screen home slideshow tweaks (improved) */
 #home.hero{min-height:100vh;padding-top:0;padding-bottom:0;position:relative}
-#home .container{height:100vh;display:flex;align-items:stretch;padding:0;position:relative}
+#home.hero {
+  min-height:100vh;
+  padding-top:84px; /* Height of nav header */
+  padding-bottom:0;
+  position:relative;
+}
+#home .container {
+  height:calc(100vh - 84px);
+  display:flex;
+  align-items:stretch;
+  padding:0;
+  position:relative;
+}
 .hero-inner{display:flex;flex:1;align-items:stretch;gap:40px;position:relative}
 
 /* Make slides fill viewport and stack absolutely */
@@ -174,6 +261,9 @@ html,body{scroll-behavior:smooth}
 
 /* adjust for mobile: hero becomes stacked and slides shrink */
 @media (max-width:900px){
+  #home.hero {
+    padding-top:54px;
+  }
   #home .container{height:auto;padding:24px}
   .hero-inner{flex-direction:column}
   .hero-text{flex:unset;padding:18px;background:linear-gradient(180deg,rgba(2,6,23,0.4),transparent)}
@@ -185,11 +275,31 @@ html,body{scroll-behavior:smooth}
 
 /* Full-bleed hero background to span entire viewport width */
 .hero-bg{position:fixed;left:0;right:0;top:0;height:100vh;z-index:0;overflow:hidden}
-.hero-bg .slide-show{position:relative;height:100%;width:100%}
+.hero-bg {
+  position:fixed;
+  left:0;
+  right:0;
+  top:84px; /* Height of nav header */
+  height:calc(100vh - 84px);
+  z-index:0;
+  overflow:hidden;
+}
+.hero-bg .slide-show {
+  position:relative;
+  height:100%;
+  width:100%;
+}
 .hero-bg .slide{position:absolute;inset:0;background-size:cover;background-position:center center;opacity:0;transition:opacity .6s ease}
 .hero-bg .slide.active{opacity:1}
 
 /* place slide caption at extreme right, vertically centered */
+
+@media (max-width:900px) {
+  .hero-bg {
+    top:54px;
+    height:calc(100vh - 54px);
+  }
+}
 .slide-caption{
   position:absolute;
   right:40px;
@@ -202,6 +312,26 @@ html,body{scroll-behavior:smooth}
   max-width:360px;
   text-align:right;
   box-shadow:0 8px 24px rgba(2,6,23,0.6);
+/* Crop IISM23 Facilitation image horizontally (centered) */
+.slide[style*="IISM23F.png"] {
+  background-position: center top !important;
+  background-size: cover !important;
+}
+}
+
+@media (max-width:600px) {
+  .slide-caption {
+    display: none;
+  }
+  .slide[style*="IISM23F.png"] {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+}
+  background-position: center center !important;
+  background-size: cover !important;
+  object-fit: cover;
+}
 }
 
 @media (max-width:900px){
@@ -244,7 +374,7 @@ html,body{scroll-behavior:smooth}
 /* Fixed social button group in the top right of the Home section */
 .home-socials-fixed {
   position: absolute;
-  top: 72px; /* Move below nav/tab list area, adjust as needed */
+  top: 96px; /* Increased to avoid nav overlap */
   right: 32px;
   z-index: 10;
   display: flex;
@@ -272,6 +402,18 @@ html,body{scroll-behavior:smooth}
   color: var(--accent);
 }
 .home-bg { position: relative; }
+
+/* Crop IISM23 Facilitation image horizontally (centered) */
+.slide[style*="IISM23F.png"] {
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+@media (max-width:600px) {
+  .slide-caption {
+    display: none;
+  }
+}
 
 /* Mobile enhancements for gallery, modal, and video */
 @media (max-width:600px) {
